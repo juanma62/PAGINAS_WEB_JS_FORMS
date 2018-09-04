@@ -1,7 +1,6 @@
 import{Form} from './form.js'
 
-document.addEventListener('DOMContentLoaded', 
-    () => {
+document.addEventListener('DOMContentLoaded', function(){
         new Form()
     }
 )
