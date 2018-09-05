@@ -1,5 +1,5 @@
 {
-  "name": "PAGINAS_WEB_JS_FORMS",
+  "name": "paginas_web_js_forms",
   "version": "1.0.0",
   "description": "Segunda parte del Módulo de JS",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/juanma62/PAGINAS_WEB_JS_FORMS.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Juan Manuel",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/juanma62/PAGINAS_WEB_JS_FORMS/issues"
