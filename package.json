@@ -1,0 +1,23 @@
+{
+  "name": "PAGINAS_WEB_JS_FORMS",
+  "version": "1.0.0",
+  "description": "Segunda parte del Módulo de JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanma62/PAGINAS_WEB_JS_FORMS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanma62/PAGINAS_WEB_JS_FORMS/issues"
+  },
+  "homepage": "https://github.com/juanma62/PAGINAS_WEB_JS_FORMS#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  }
+}
