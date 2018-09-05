@@ -1,10 +1,3 @@
-class Loader {
-    constructor(){
-        this.cambia = document.querySelector('#mas')
-    }
-    this.cambia.addEventListener('click', 
-            this.escribir.bind(this))
-}
+import { App } from './app.js'
 
-document.addEventListener('DOMContentLoaded', function () {
-})
+document.addEventListener('DOMContentLoaded', () => {new App()})
