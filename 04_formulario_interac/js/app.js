@@ -10,7 +10,9 @@ export class App {
             btnEnviar : document.querySelector('#btnEnviar'),
             btnRaro : document.querySelector('#btnRaro')
         }
+        // Variable de array de datos
         this.aGeneros = GENEROS
+        // Variable de estado
         this.generosFirst = true
         this.defineHandlers()
         this.crearSelect(this.aGeneros, this.dom.slGenero)
@@ -63,7 +65,9 @@ export class App {
     }
 
     enviar(oEv) {
+        // Anular el evento enviar
         oEv.preventDefault()
+        // Variable con los datos para enviar en json
         const data = '?genero=' + 
         this.dom.slGenero[this.dom.slGenero.selectedIndex].value
         + '&autor=' +
