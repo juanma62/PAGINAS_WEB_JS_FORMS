@@ -1,35 +1,35 @@
-function main(){
-    let inputNombre = document.querySelector('#nombre')
-    let inputApellido = document.querySelector('#apellido')
+function main() {
+    let inNombre = document.querySelector('#nombre')
+    let inApellido = document.querySelector('#apellido')
     let btnEnviar = document.querySelector('#enviar')
+    let formForm1 = document.querySelector('#form1')
 
-    // Eventos focus / blur
+    formForm1.addEventListener('submit', enviar)
+    inNombre.addEventListener('input', validaNombre)
 
-    inputNombre.addEventListener('blur', validaTexto)
-    inputNombre.addEventListener('input', validaTexto)
-    inputApellido.addEventListener('blur', validaTexto)
-    inputApellido.addEventListener('input', validaTexto)
-
-    //console.log(form)
-    //console.log(inputNombre)
-
-    function validaTexto(){
-        if(!this.value){
-            console.log(`${this.id} incorrecto`)
-            console.dir(this)
-            this.nextElementSibling.innerHTML = `${this.id} incorrecto`
+    function validaNombre(){
+        let validControl = true
+        if(!inNombre.checkValidity()){
+            inNombre.nextElementSibling.innerHTML = 'El nombre es necesario'//inNombre.validationMessage
+            validControl = false
         }else{
-           this.nextElementSibling.innerHTML = ''
-           validaFormulario()
+            inNombre.nextElementSibling.innerHTML = ''
+            validControl = true
         }
+        return validControl
     }
 
-    function validaFormulario(){
-        if(inputNombre.value && inputApellido.value){
-            btnEnviar.disabled = false
+    function enviar(oEv) {
+        console.log("Enviando")
+        if(!validaNombre()){
+            oEv.preventDefault()
+        }else{
+            // Esto sobraria para enviar realmente
+            oEv.preventDefault()
+            console.log("Enviando") 
         }
     }
-
 }
 
 document.addEventListener('DOMContentLoaded', main)
+
