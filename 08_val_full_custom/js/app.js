@@ -1,3 +1,5 @@
+
+
 function main() {
     // let inNombre = document.querySelector('#nombre')
     // let inApellido = document.querySelector('#apellido')
@@ -75,3 +77,4 @@ function main() {
 }
 
 document.addEventListener('DOMContentLoaded', main)
+
