@@ -1,13 +1,15 @@
 function main () {
 
-    form = document.querySelector('form')
-    inDni = document.querySelector('#dni')
-    btnEnviar = document.querySelector('#btnEnviar')
+    let form = document.querySelector('form')
+    let inDni = document.querySelector('#dni')
+    let inUser = document.querySelector('#user')
+    let btnEnviar = document.querySelector('#btnEnviar')
 
-    inDni.setCustomValidity('DNI Incorrecto')
+    inUser.setCustomValidity('Nombre de usuario imprescindible')
 
     form.addEventListener('submit', enviar)
     inDni.addEventListener('input', validaDNI)
+    inUser.addEventListener('input', validaUser)
 
     function enviar(oE) {
         oE.preventDefault()
@@ -18,18 +20,27 @@ function main () {
     }
 
     function validaDNI() {
-        inDni.setCustomValidity('DNI Incorrecto')
+        let msgDNI = 'DNI Incorrecto'
+        inDni.setCustomValidity(msgDNI)
         console.log('Validando DNI')
         const LETRAS = 'TRWAGMYFPDXBNJZSQVHLCKET'
         let num = inDni.value.substring(0, inDni.value.length-1)
         let letra =  inDni.value.substring(inDni.value.length-1)
-
+        console.log(num, letra)
+        console.dir(inDni)
         if (isNaN(num *1) || num < 1 || num > 99999999 ) {
             return false
         } else if(LETRAS[num%23] !== letra) {
             return false
-        }else{
-            inDni.setCustomValidity('')
+        }
+        inDni.setCustomValidity('')
+    }
+
+    function validaUser() {
+        inUser.setCustomValidity('Nombre de usuario imprescindible')
+        console.log(inUser.value)
+        if (inUser.value) {
+            inUser.setCustomValidity(' ')
         }
     }
 }
