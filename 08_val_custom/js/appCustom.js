@@ -4,12 +4,14 @@ function main () {
     let inDni = document.querySelector('#dni')
     let inUser = document.querySelector('#user')
     let btnEnviar = document.querySelector('#btnEnviar')
-
+    let inPass1 = document.querySelector('#passw')
+    let inPass2 = document.querySelector('#passw2')
     inUser.setCustomValidity('Nombre de usuario imprescindible')
 
     form.addEventListener('submit', enviar)
     inDni.addEventListener('input', validaDNI)
     inUser.addEventListener('input', validaUser)
+    inPass2.addEventListener('input', compararPassw)
 
     function enviar(oE) {
         oE.preventDefault()
@@ -40,8 +42,16 @@ function main () {
         inUser.setCustomValidity('Nombre de usuario imprescindible')
         console.log(inUser.value)
         if (inUser.value) {
-            inUser.setCustomValidity(' ')
+            inUser.setCustomValidity('')
         }
+    }
+
+    function compararPassw() {
+        let msg = "";            
+        if (inPass1.value != inPass2.value) {
+            msg = "Las contraseñas no coinciden" 
+        }
+        inPass2.setCustomValidity(msg)
     }
 }
 

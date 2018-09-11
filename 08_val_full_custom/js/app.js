@@ -1,5 +1,3 @@
-
-
 function main() {
     // let inNombre = document.querySelector('#nombre')
     // let inApellido = document.querySelector('#apellido')
@@ -7,6 +5,13 @@ function main() {
     let aInputs = document.querySelectorAll('.val')
     let btnEnviar = document.querySelector('#enviar')
     let formForm1 = document.querySelector('#form1')
+    let inDNI = document.querySelector('#dni')
+
+    inDNI.setCustomValidity('DNI Incorrecto')
+    console.dir(inDNI.validity)
+  
+
+    //aInputs[1].focus()
 
     btnEnviar.addEventListener('click', preEnviar)
     formForm1.addEventListener('submit', enviar)
@@ -16,18 +21,24 @@ function main() {
     aInputs.forEach( item => {
         item.addEventListener('input', validaText)
     })
+    inDNI.addEventListener('input', validaDNI)
+
 
     function preEnviar () {
         console.log("Pulsado click")
         console.dir(formForm1)
+        inDNI.setCustomValidity('')
+        console.dir(inDNI.validity)
     }
 
     function validaText(oEv) {
         let element = oEv.target
         console.dir(element)
 
+
+
         let validControl = true
-        //if (!element.validity.valid) {
+        // if (!element.validity.valid) {
         if (!element.checkValidity()) {
             let msg =''
             console.log(element.validity)
@@ -45,6 +56,7 @@ function main() {
             element.nextElementSibling.innerHTML = msg   
             validControl = false
             element.nextElementSibling.classList.remove('hide')
+            element.focus()
         } else {
             element.nextElementSibling.innerHTML = ''
             validControl = true
@@ -55,7 +67,7 @@ function main() {
     }
 
     function enviar(oEv) {
-        if(checkInvalidInputs() ) {
+        if(checkInvalidInputs()) {
             console.log("No valido") 
              oEv.preventDefault()
         } else {
@@ -72,9 +84,15 @@ function main() {
                 return true;
             }
         }
+        if(!validaDNI()) {
+            return true
+        }
+    }
+
+    function validaDNI() {
+
     }
 
 }
 
 document.addEventListener('DOMContentLoaded', main)
-
