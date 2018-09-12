@@ -8,27 +8,26 @@ function asincP () {
                     let number = Math.random()
                     if (number < 0.7) {
                         // correcto
+                        // return true
                         resolve(number)
                     }  else {
                         // incorrecto
+                        // return false
                         reject(number)
                     }
                 }, 3000)
-
     }) 
 }
 
-function asincProm(){
-    return new Promise(
-        (resolve, reject) => {}
-    )
-}
-
-
-asincP().then( 
+asincP()
+.then( 
     (response) => { console.log(`Todo bien gracias al ${response}`)},
     (error) => { console.log(`Error debido a ${error}`) }
 )
 //.catch (
-//    (response) => { console.log(`Error debido a ${response}`) }
+//    (error) => { console.log(`Error debido a ${error}`) }
 //)
+
+asincProm().then(
+    (response) => { console.log(response)}
+)

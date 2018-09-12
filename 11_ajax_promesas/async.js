@@ -1,4 +1,4 @@
-function main() {
+async function main() {
 
     function promesas() {
         return new Promise(
@@ -8,18 +8,16 @@ function main() {
         )
     }
 
-    promesas().then(
-        (response) => {console.log(response)}
-    )
-
-/*     function pintar(msg) {
+    function pintar(msg) {
         console.log(msg)
     }
+
+    let response = await promesas()
     
-    promesas()
-    .then(pintar) */
+    pintar(response)
 
     console.log('Ultima linea')
+
 
 }
 
