@@ -1,0 +1,25 @@
+div{
+    margin-top: 2rem
+}
+
+p.output{
+    min-height: 3rem;
+    background-color: bisque;
+}
+
+footer{
+    display: fixed;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    min-height: 3rem;
+    border-top: 1px solid brown
+}
+
+main {
+    min-height: 70rem;
+}
+
+.mayusculas{
+    color: blueviolet;
+}

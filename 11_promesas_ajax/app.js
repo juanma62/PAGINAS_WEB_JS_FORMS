@@ -1,4 +1,5 @@
 import { DATOS, JSON } from './config.js'
+import { AjaxService } from './ajax-service.js';
 
 export class App {
     constructor () {
@@ -24,41 +25,20 @@ export class App {
     pedirDatos(oEv) {
         switch (oEv.target.id) {
             case 'btnDatos':
-                fetch(DATOS, {method:'GET'}).then(
-                    (response) => {
-                        console.dir(response)
-                        return response.text()
-                    }
-                ).then(
-                    (response) => { 
-                        console.log(response)
-                        this.mostrarDatos({respuesta: response})
-                    }
+                new AjaxService('GET', DATOS, 'txt').send().then(
+                    (response) => {this.mostrarDatos(response)},
+                    (error) => {this.mostrarDatos(error)}
                 )
                 break;
             case 'btnJson':
-                fetch(JSON, {method:'GET'}).then(
-                    (response) => {return response.json()}
-                ).then(
-                    (data) => {
-                        console.dir(data)
-                        this.mostrarDatos(data)
-                    }
+                new AjaxService('GET', JSON , 'json').send().then(
+                    (response) => {this.mostrarDatos(response)},
+                    (error) => {this.mostrarDatos(error)}
                 )
-                break;
-
+                break;  
             case 'btnError':  
-                fetch('error', {method: 'GET'}).then(
-                    (response) => {
-                        console.log(response)
-                        this.mostrarError(response) 
-                    }
-                )
-            break;  
-
-            case 'btnError':  
-                fetch('error', {method: 'GET'}).then(
-                    (response) => {this.mostrarError(response)}
+                new AjaxService('GET', 'error', '').send().catch(
+                    (error) => {this.mostrarError(error)}
                 )
             break;                   
         }
@@ -79,8 +59,8 @@ export class App {
     }
 
     mostrarError(oDatos) {
-        let error = oDatos.status + ' : ' + oDatos.statusText
-        this.ndError.innerHTML = error
+        this.ndError.innerHTML = oDatos.error
         this.ndOutput.innerHTML = ''
     }
 }
+
