@@ -1,4 +1,5 @@
 import { DATOS, JSON } from './config.js'
+import { FetchService } from './fetch-service.js'
 
 export class App {
     constructor () {
@@ -22,46 +23,39 @@ export class App {
     }
 
     pedirDatos(oEv) {
+        let serviceFetch
+        let config
         switch (oEv.target.id) {
             case 'btnDatos':
-                fetch(DATOS, {method:'GET'}).then(
-                    (response) => {
-                        console.dir(response)
-                        return response.text()
-                    }
-                ).then(
-                    (response) => { 
-                        console.log(response)
-                        this.mostrarDatos({respuesta: response})
-                    }
-                )
+                config = { url : DATOS,
+                            method:'GET',
+                            type: 'txt'}
                 break;
             case 'btnJson':
-                fetch(JSON, {method:'GET'}).then(
-                    (response) => {return response.json()}
-                ).then(
-                    (data) => {
-                        console.dir(data)
-                        this.mostrarDatos(data)
-                    }
-                )
-                break;
-
-            case 'btnError':  
-                fetch('error', {method: 'GET'}).then(
-                    (response) => {
-                        console.log(response)
-                        this.mostrarError(response) 
-                    }
-                )
-            break;  
-
-            case 'btnError':  
-                fetch('error', {method: 'GET'}).then(
-                    (response) => {this.mostrarError(response)}
-                )
-            break;                   
+                config = { url : JSON,
+                            method:'GET',
+                            type: 'json'}
+            case 'btnError': 
+                config = { url : 'error',
+                            method:'GET',
+                            type: ''}            
+                break;                  
         }
+        serviceFetch = new FetchService(config).get().then(
+            (response) => { 
+                console.log(response)
+                this.mostrarDatos(response)
+            },
+            (error) => {
+                console.log(error),
+                this.mostrarError(error) 
+            }
+        )
+
+        /* serviceFetch = new FetchService(config).get().then(
+            response => this.mostrarDatos(response),
+            error => this.mostrarError(error)) */
+
     } 
 
     mostrarDatos(oDatos) {
@@ -84,3 +78,4 @@ export class App {
         this.ndOutput.innerHTML = ''
     }
 }
+
