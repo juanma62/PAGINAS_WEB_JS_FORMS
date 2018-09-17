@@ -1,0 +1,25 @@
+{
+  "articulos": [
+    {
+      "author": "Maroto",
+      "id": 2,
+      "title": "Todos los días"
+    },
+    {
+      "title": "Martes",
+      "author": "Juan",
+      "editorial": "Pepito",
+      "id": 6
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

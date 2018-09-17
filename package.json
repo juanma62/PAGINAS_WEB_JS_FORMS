@@ -4,6 +4,7 @@
   "description": "Segunda parte del Módulo de JS",
   "main": "index.js",
   "scripts": {
+    "start.api": "json-server --watch db.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/juanma62/PAGINAS_WEB_JS_FORMS#readme",
   "dependencies": {
-    "bootstrap": "^4.1.3"
+    "bootstrap": "^4.1.3",
+    "json-server": "^0.14.0"
   }
 }
