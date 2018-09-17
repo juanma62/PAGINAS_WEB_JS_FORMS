@@ -3,13 +3,13 @@ export class Tarea {
     constructor(data){
         this.name = data.name
         this.isComplete = data.isComplete
-        this.renderTarea()
+        //this.renderTarea()
     }
 
     renderTarea(){
         let html = `<li>
         <input type="checkbox" name="isCompleta" id="isCompleta"
-            ${this.isComplete ?}, 'checked' = "">
+        ${this.isComplete ? 'checked' : ''}>
         <span class="nombreTarea">${this.name}</span>
         <span>🗑️</span>
         </li> `
