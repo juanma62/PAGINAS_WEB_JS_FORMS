@@ -1,0 +1,12 @@
+body{
+    margin: 2rem 3rem;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+li{
+    margin: 1rem 0;
+}

@@ -21,5 +21,15 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "tareas": [
+    {
+      "name" : "Clases del curso de páginas WEB",
+      "isComplete": false
+    },
+    {
+      "name" : "Reunión de trabajo",
+      "isComplete": false
+    }
+  ]
 }
