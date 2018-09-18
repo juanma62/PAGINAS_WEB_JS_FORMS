@@ -17,29 +17,18 @@ export class App {
         if(this.clave){
             url = this.URLBase + this.clave
             fetch(url, {method:'GET'}).then(
-                response => response.json()
-            ).then(data => this.mostrar(data)
+                (response) => {
+                    console.log(response)
+                    return response.json()
+                }
+            ).then(data => this.render(data)
             )
         }
     }
 
-    mostrar(data){
-        let aLibros
+    render(data){
+        let aLibros = this.prepararDatos(data)
         let html = '<dl>'
-        console.log(data.items)
-        aLibros = data.items.map(
-            item => {
-                return {
-                    autores: item.volumeInfo.authors,
-                    titulo: item.volumeInfo.title,
-                    icon: item.volumeInfo.imageLinks ?
-                        item.volumeInfo.imageLinks.smallThumbnail: this.noDispo
-                }  
-            }
-        )
-        
-        console.log(aLibros)
-
         aLibros.forEach(item => {
             let autor = ''
             if(item.autores){
@@ -52,5 +41,22 @@ export class App {
         html += '</dl>'
         this.nOutput.innerHTML = html
         this.nClave.value = ''
+    }
+
+    prepararDatos(data){
+        let aLibros
+        console.log(data.items)
+        aLibros = data.items.map(
+            item => {
+                return {
+                    autores: item.volumeInfo.authors,
+                    titulo: item.volumeInfo.title,
+                    icon: item.volumeInfo.imageLinks ?
+                        item.volumeInfo.imageLinks.smallThumbnail: this.noDispo
+                }  
+            }
+        )
+        console.log(aLibros)
+        return aLibros
     }
 }

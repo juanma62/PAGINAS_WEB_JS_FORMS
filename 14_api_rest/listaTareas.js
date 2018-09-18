@@ -16,15 +16,16 @@ export class ListaTareas {
         .then(data => {
             this.aTareas = data
             this.renderLista()
-        })
+        },
+        (error) => {console.dir(error)}
+        )
     }
 
     renderLista(){
-        let html = ""
         this.aTareas.forEach(
-            item => 
-                html += new Tarea(item).renderTarea()
+            item => {
+                this.nodoListaTareas.appendChild(new Tarea(item).renderTarea())
+            }
         )
-        this.nodoListaTareas.innerHTML = html
     }
 }

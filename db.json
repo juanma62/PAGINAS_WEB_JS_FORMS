@@ -24,10 +24,12 @@
   },
   "tareas": [
     {
+      "id": 1,
       "name" : "Clases del curso de páginas WEB",
-      "isComplete": false
+      "isComplete": true
     },
     {
+      "id": 2,
       "name" : "Reunión de trabajo",
       "isComplete": false
     }

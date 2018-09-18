@@ -2,9 +2,19 @@ body{
     margin: 2rem 3rem;
 }
 
-ul{
+ul.tareas{
     list-style: none;
     padding-left: 0;
+}
+
+ul.tareas li {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+ul.tareas li span.borrarTarea {
+    cursor: pointer;
 }
 
 li{

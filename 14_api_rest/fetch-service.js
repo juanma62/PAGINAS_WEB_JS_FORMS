@@ -16,13 +16,13 @@ export class FetchService {
                         return response.json()
                     } else {
                         reject( 
-                            { status : response.status,
+                            {status : response.status,
                             statusText: response.statusText}
                         )
                     }
                 }
             ).then(
-                (data) => { resolve( data )}
+                (data) => {resolve(data)}
             )
         }
         )        
