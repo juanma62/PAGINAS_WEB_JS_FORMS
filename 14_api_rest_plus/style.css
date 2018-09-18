@@ -13,14 +13,10 @@ ul.tareas li {
     width: 300px;
 }
 
-ul.tareas li span.borrar-tarea {
+ul.tareas li span.borrarTarea {
     cursor: pointer;
 }
 
 li{
     margin: 1rem 0;
-}
-
-.hecho {
-    text-decoration: line-through;
 }

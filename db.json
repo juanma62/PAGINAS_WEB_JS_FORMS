@@ -25,12 +25,24 @@
   "tareas": [
     {
       "id": 1,
-      "name" : "Clases del curso de páginas WEB",
+      "name": "Clases del curso de páginas WEB",
       "isComplete": true
     },
     {
       "id": 2,
-      "name" : "Reunión de trabajo",
+      "name": "Reunión de trabajo",
+      "isComplete": false
+    }
+  ],
+  "tareas2": [
+    {
+      "id": 1,
+      "name": "Clases del curso de páginas WEB",
+      "isComplete": true
+    },
+    {
+      "id": 2,
+      "name": "Reunión de trabajo",
       "isComplete": false
     }
   ]
