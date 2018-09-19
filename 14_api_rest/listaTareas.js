@@ -1,5 +1,7 @@
 import { FetchService } from "./fetch-service.js";
 
+import { MENSAJES } from "./mensajes.js";
+
 export class ListaTareas {
 
     constructor(){
@@ -51,10 +53,29 @@ export class ListaTareas {
 
     checkTarea(oEv){
         console.log(oEv.target.dataset.id)
+        console.log(oEv.target.checked)
+        let datos = {
+            isComplete : oEv.target.checked
+        }
+        let url = this.URL + '/' + oEv.target.dataset.id
+        let miHeaders = new Headers()
+        miHeaders.append('Content.Type', 'application/json')
+        console.dir(miHeaders)
+        this.fetchService.send(url, {
+            method: 'PATCH', 
+            headers : miHeaders,
+            body : JSON.stringify(datos)
+        }).then(
+            response => {
+                console.log(response)
+            },
+            error => console.log(error)
+        )
     }
 
     borrarTarea(oEv){
         console.log(oEv.target.dataset.id)
+        if (!window.confirm( MENSAJES.listaTareas.confirmacion)) {return}
         let url = this.URL + '/' + oEv.target.dataset.id
         this.fetchService.send(url, {method: 'DELETE'}).then(
             data =>  this.getTareas(),

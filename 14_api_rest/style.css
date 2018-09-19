@@ -5,22 +5,31 @@ body{
 ul.tareas{
     list-style: none;
     padding-left: 0;
+    width: 70%;
 }
 
 ul.tareas li {
     display: flex;
     justify-content: space-between;
-    width: 300px;
 }
 
 ul.tareas li span.borrar-tarea {
     cursor: pointer;
 }
 
+.nombre-tarea {
+    width: 90%;
+}
+
 li{
     margin: 1rem 0;
 }
 
-.hecho {
+li input{
+    width: 1rem;
+    margin-right: 1rem;
+}
+
+.hecho{
     text-decoration: line-through;
 }
