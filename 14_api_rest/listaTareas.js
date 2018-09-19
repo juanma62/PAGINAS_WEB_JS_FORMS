@@ -123,12 +123,16 @@ export class ListaTareas {
         )
     }    
 
-    borrarTareas(oEv){
-            console.log('Borra tareas')
-            let url = this.URL + '/' + oEv.target.dataset.id
-            this.fetchService.send(url, {method: 'DELETE'}).then(
-            data =>  this.getTareas(),
-            error => console.log(error),
-        )
+    borrarTareas(){
+        for(let i = 0; i < this.aTareas.length; i++){
+            if(this.aTareas[i].isComplete){
+                let url2 = this.URL + '/' + this.aTareas[i].id
+                this.fetchService.send(url2, {method: 'DELETE'})
+                .then (
+                    data => this.getTareas(),
+                    error => console.log(error),
+                )
+            }  
+        }
     }
 }
