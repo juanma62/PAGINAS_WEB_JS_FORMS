@@ -7,6 +7,8 @@ export class ListaTareas {
         this.nodoListaTareas = document.querySelector('#lista')
         this.nodoBtnAdd = document.querySelector('#btnAdd')
         this.nodoNewTarea = document.querySelector('#in-tarea')
+        this.nodoBorrarMarcados = document.querySelector('#btnBorrar')
+        this.nodoBorrarMarcados.addEventListener('click', this.borrarTareas.bind(this))
         this.nodoBtnAdd.addEventListener('click', this.addTarea.bind(this))
         this.URL = "http://localhost:3000/tareas"
         this.aTareas = []
@@ -112,11 +114,21 @@ export class ListaTareas {
 
     borrarTarea(oEv){
         console.log(oEv.target.dataset.id)
-        if (!window.confirm( MENSAJES.listaTareas.confirmacion)) {return}
+        if (!window.confirm(MENSAJES.listaTareas.confirmacion)) {return}
         let url = this.URL + '/' + oEv.target.dataset.id
         this.fetchService.send(url, {method: 'DELETE'}).then(
+            data =>  {
+                this.getTareas()
+            }, error => console.log(error),
+        )
+    }    
+
+    borrarTareas(oEv){
+            console.log('Borra tareas')
+            let url = this.URL + '/' + oEv.target.dataset.id
+            this.fetchService.send(url, {method: 'DELETE'}).then(
             data =>  this.getTareas(),
             error => console.log(error),
         )
-    }    
+    }
 }
