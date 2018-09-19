@@ -26,12 +26,22 @@
     {
       "id": 1,
       "name": "Clases del curso de páginas WEB",
-      "isComplete": true
+      "isComplete": false
     },
     {
       "id": 2,
       "name": "Reunión de trabajo",
       "isComplete": false
+    },
+    {
+      "name": "Aprender WordPress",
+      "isComplete": false,
+      "id": 4
+    },
+    {
+      "name": "Aprender Ángular",
+      "isComplete": false,
+      "id": 5
     }
   ],
   "tareas2": [

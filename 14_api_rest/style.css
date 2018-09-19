@@ -33,3 +33,11 @@ li input{
 .hecho{
     text-decoration: line-through;
 }
+
+.inactivo{
+    opacity: 0.5;
+}
+
+.borrar-activo{
+    opacity: 1;
+}
