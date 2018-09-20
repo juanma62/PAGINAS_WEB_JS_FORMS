@@ -8,6 +8,9 @@ export class ListaTareas {
         this.nodoBtnAdd = document.querySelector('#btnAdd')
         this.nodoNewTarea = document.querySelector('#in-tarea')
         this.nodoBorrarMarcados = document.querySelector('#btnBorrar')
+        this.nodoBuscar = document.querySelector('#btnBuscar')
+        this.nodoBuscarValor = document.querySelector('#in-buscar')
+        this.nodoBuscarValor.addEventListener('click', this.buscarTareas.bind(this))
         this.nodoBorrarMarcados.addEventListener('click', this.borrarTareas.bind(this))
         this.nodoBtnAdd.addEventListener('click', this.addTarea.bind(this))
         this.URL = "http://localhost:3000/tareas"
@@ -20,16 +23,16 @@ export class ListaTareas {
         this.fetchService.send(this.URL, {method: 'GET' })
             .then( data => {
                 this.aTareas = data
-                console.dir(this.aTareas)
+                //console.dir(this.aTareas)
                 this.aTareas = this.aTareas.filter(
                     (item) => {
-                        console.log(item.name.indexOf('Aprender')) 
+                        //console.log(item.name.indexOf('Aprender')) 
                         if (item.name.indexOf('e') >= 0 ) { return true} 
                         else { return false }
                     }
                 )
-                console.dir(this.aTareas)
-
+                //console.dir(this.aTareas)
+                console.log('Ejecutando get tareas')
                 this.renderLista()
             },
             error => {console.dir(error)}
@@ -39,8 +42,16 @@ export class ListaTareas {
     renderLista(){
         this.nodoListaTareas.innerHTML = ''
         let html = ""
+
+        this.nodoBorrarMarcados.disabled = true
+
         this.aTareas.forEach(
-            item => html += this.renderTarea(item)
+            (item) => {
+                if(item.isComplete && this.nodoBorrarMarcados.disabled){
+                    this.nodoBorrarMarcados.disabled = false
+                }
+                html += this.renderTarea(item)
+            }
         )
         this.nodoListaTareas.innerHTML = html
         this.aNodosChecks = document.querySelectorAll('[name="is-completa"]')
@@ -60,7 +71,7 @@ export class ListaTareas {
             <input type="checkbox" name="is-completa" id="check-${data.id}"
             data-id="${data.id}" ${data.isComplete ? 'checked' : ''}>
             <span class="nombre-tarea ${data.isComplete ? 'hecho' : ''}">${data.name}</span>
-            <span id="borrarcheck-${data.id}" data-id="${data.id}" class="borrar-tarea ${data.isComplete ? 'borrar-activo' : 'inactivo'}">🗑️</span>
+            <span id="borrarcheck-${data.id}" data-id="${data.id}" class="borrar-tarea ${data.isComplete ? 'borrar-activo' : 'inactivo'}">🗑️</span>  
         </li>
         `
         return htmlView
@@ -82,7 +93,7 @@ export class ListaTareas {
             body : JSON.stringify(datos)
         }).then(
             response => {
-                console.log(response)
+                //console.log(response)
                 this.getTareas()
             },
             error => console.log(error)
@@ -112,7 +123,26 @@ export class ListaTareas {
         )
     }
 
-    borrarTarea(oEv){
+    borrarTarea(p){
+        let id
+        if(p.target){
+            id = p.target.dataset.id
+        if (!window.confirm(MENSAJES.listaTareas.confirmacion)) {return}
+        }else{
+            id = p.id
+        }
+        console.log(id)
+        let url = this.URL + '/' + id
+        this.fetchService.send(url, {method: 'DELETE'}).then(
+            data =>  {
+                if(p.target || p.isUltima){
+                   this.getTareas() 
+                }
+            }, error => console.log(error),
+        )
+    }
+    
+    /* borrarTarea(oEv){
         console.log(oEv.target.dataset.id)
         if (!window.confirm(MENSAJES.listaTareas.confirmacion)) {return}
         let url = this.URL + '/' + oEv.target.dataset.id
@@ -121,10 +151,10 @@ export class ListaTareas {
                 this.getTareas()
             }, error => console.log(error),
         )
-    }    
+    } */
 
     borrarTareas(){
-        for(let i = 0; i < this.aTareas.length; i++){
+        /* for(let i = 0; i < this.aTareas.length; i++){
             if(this.aTareas[i].isComplete){
                 let url2 = this.URL + '/' + this.aTareas[i].id
                 this.fetchService.send(url2, {method: 'DELETE'})
@@ -133,6 +163,25 @@ export class ListaTareas {
                     error => console.log(error),
                 )
             }  
-        }
+        } */
+        
+        let aSeleccionados = this.aTareas.filter(
+            (item) => {return item.isComplete}
+        )
+        // Si no controlamos el disable del botón
+        //if(!aSeleccionados.length){return}
+        
+        if (!window.confirm(MENSAJES.listaTareas.confirmacion)) {return}
+        
+        aSeleccionados.forEach(
+            (item, i, array) => {
+                let isUltima = (i+1 === array.length) ? true : false
+                this.borrarTarea({id : item.id, isUltima : isUltima})
+            }
+        )
+    }
+
+    buscarTareas(){
+        
     }
 }

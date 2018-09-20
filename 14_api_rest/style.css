@@ -41,3 +41,7 @@ li input{
 .borrar-activo{
     opacity: 1;
 }
+
+.buscar{
+    margin-bottom: 1rem;
+}
