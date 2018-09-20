@@ -26,20 +26,25 @@
     {
       "id": 1,
       "name": "Clases del curso de páginas WEB",
-      "isComplete": false
+      "isComplete": true
     },
     {
       "id": 2,
       "name": "Reunión de trabajo",
-      "isComplete": false
+      "isComplete": true
     },
     {
-      "name": "Aprender WordPress",
+      "name": "Curso de WordPress",
+      "isComplete": false,
+      "id": 3
+    },
+    {
+      "name": "Curso de Ángular",
       "isComplete": false,
       "id": 4
     },
     {
-      "name": "Aprender WordPress",
+      "name": "Curso de Word",
       "isComplete": false,
       "id": 5
     }
@@ -56,12 +61,17 @@
       "isComplete": false
     },
     {
-      "name": "Aprender WordPress",
+      "name": "Curso de WordPress",
+      "isComplete": false,
+      "id": 3
+    },
+    {
+      "name": "Curso de Ángular",
       "isComplete": false,
       "id": 4
     },
     {
-      "name": "Aprender WordPress",
+      "name": "Curso de Word",
       "isComplete": false,
       "id": 5
     }
