@@ -4,8 +4,8 @@ export class HeaderComponent{
     }
 
     render(){
-        const header = document.createElement('header')`
-        header.innerHTML = `<h1 class="title">${this.title}</h1>`
+        const header = document.createElement('header')
+        header.innerHTML = '<h1 class="title">Página de componentes</h1>'
         return header
     }
 }

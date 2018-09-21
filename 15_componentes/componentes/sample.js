@@ -9,9 +9,9 @@ export class Sample{
     }
 
     renderNodo(){
-        let nodo = document.createElement('header')
-        nodo.innerHTML = '<h1>Hola mundo</h1>'
-        return nodo
+        let nombreNodo = document.createElement('header')
+        nombreNodo.innerHTML = '<h1>Hola mundo</h1>'
+        return nombreNodo
     }
 }
 

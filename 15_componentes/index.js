@@ -1,18 +1,9 @@
-import { HeadComponent } from './componentes/head-component.js'
-import { HeaderComponent } from './componentes/header-component.js'
+import { PageController } from './page-controller.js';
 
-class Index{
-    constructor(){
-        this.head = new HeadComponent('Componentes')
-        this.header = new HeaderComponent('Página de componentes')
-
-        this.render()
-    }
-
-    render(){
-        document.head.insertAdjacentHTML('afterbegin', this.head.render())
-        document.header.
+class Index extends PageController {
+    constructor() {
+        super()
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {new Index()})
+document.addEventListener('DOMContentLoaded', () => { new Index()})
