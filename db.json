@@ -26,12 +26,12 @@
     {
       "id": 1,
       "name": "Clases del curso de páginas WEB",
-      "isComplete": true
+      "isComplete": false
     },
     {
       "id": 2,
       "name": "Reunión de trabajo",
-      "isComplete": true
+      "isComplete": false
     },
     {
       "name": "Curso de WordPress",
