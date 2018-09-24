@@ -47,6 +47,11 @@
       "name": "Curso de Word",
       "isComplete": false,
       "id": 5
+    },
+    {
+      "name": "Curso Dreamweaver",
+      "isComplete": false,
+      "id": 6
     }
   ],
   "tareas2": [

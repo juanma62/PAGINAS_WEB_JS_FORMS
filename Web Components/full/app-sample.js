@@ -1,5 +1,6 @@
 class AppSample extends HTMLElement  {
     constructor () {
+        // Cuando hay herencia hay que invocar al constructor del padre
         super()
         console.log("Creado el componente")
         const oImport = document.querySelector('link[rel="import"]').import;
