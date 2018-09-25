@@ -1,12 +1,9 @@
 {
   "name": "angular2",
   "version": "0.0.0",
-  "bin": {
-    "typescript-starter": "./bin/typescript-starter"
-  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start-serve": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
