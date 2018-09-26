@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabeceraComponent implements OnInit {
 
+  titulo: string
+
   constructor() { }
 
   ngOnInit() {
+    this.titulo = "Proyecto Angular"
   }
 
 }

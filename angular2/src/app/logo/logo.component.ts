@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoComponent implements OnInit {
 
+  logo: string
+  alt: string
+  title: string
+
   constructor() { }
 
   ngOnInit() {
+    this.logo = "../../assets/logo.svg"
+    this.alt = "Logotipo Angular"
+    this.title = "Este es el logotipo de Angular"
   }
 
 }

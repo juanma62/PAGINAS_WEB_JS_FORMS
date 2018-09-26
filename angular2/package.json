@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start-serve": "ng serve",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start": "ts-node ./typescript/app.ts"
+    "start-serve": "ts-node ./typescript/app.ts"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +21,9 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "bootstrap": "^4.1.3",
     "core-js": "^2.5.4",
+    "help": "^3.0.2",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },
