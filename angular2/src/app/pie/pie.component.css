@@ -1,4 +1,7 @@
-footer{
-    text-align: center;
-    margin-top: 2rem;
+:host {
+    background-color: brown;
+    color: bisque;
+    display: block;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
