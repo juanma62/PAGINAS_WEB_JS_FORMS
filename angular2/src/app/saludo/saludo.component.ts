@@ -15,8 +15,8 @@ export class SaludoComponent implements OnInit {
     this.nombre = 'Juan'
   }
 
-  btnSaludar(){
-    console.log('Hola')
+  btnBorrar(){
+    this.nombre = ''
   }
 
 }
