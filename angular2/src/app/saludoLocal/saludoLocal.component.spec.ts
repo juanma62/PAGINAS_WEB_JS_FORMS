@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { SaludoLocalComponent } from './saludoLocal.component';
 
@@ -8,7 +9,10 @@ describe('SaludoLocalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SaludoLocalComponent ]
+      imports:[
+        FormsModule
+      ],
+      declarations: [ SaludoLocalComponent]
     })
     .compileComponents();
   }));

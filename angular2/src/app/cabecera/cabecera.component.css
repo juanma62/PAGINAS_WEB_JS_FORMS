@@ -6,7 +6,9 @@
 }
 
 h1 {
+    font-size: 4rem;
+    display: flex;
     margin: 0;
     color: bisque;
-    text-align: center;
+    align-items: center;
 }
