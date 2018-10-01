@@ -16,6 +16,9 @@ import { SaludoLocalComponent } from './saludoLocal/saludoLocal.component';
 import { MainComponent } from './main/main.component';
 import { TareasComponent } from './tareas/tareas.component';
 import { TareasSimpleComponent } from './tareas-simple/tareas-simple.component';
+import { HomeModule } from './home/home.module';
+import { ContactsModule } from './contacts/contacts.module';
+import { TareasModule } from './tareas/tareas.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { TareasSimpleComponent } from './tareas-simple/tareas-simple.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HomeModule,
+    ContactsModule,
+    TareasModule
   ],
   providers: [],
   bootstrap: [AppComponent]
