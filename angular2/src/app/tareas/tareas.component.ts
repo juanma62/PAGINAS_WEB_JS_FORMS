@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'cas-tareas',
   templateUrl: './tareas.component.html',
-  styleUrls: ['./tareas.component.css']
+  styles: []
 })
 export class TareasComponent implements OnInit {
 
