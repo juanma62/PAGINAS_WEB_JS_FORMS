@@ -13,5 +13,4 @@ export class CabeceraComponent {
     this.fw = 'Angular'
     this.titulo = `Proyecto ${this.fw}`
   }
-
 }

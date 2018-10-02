@@ -6,15 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pie.component.css']
 })
 export class PieComponent implements OnInit {
-
   empresa: string
   lugar: string
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit() {
     this.empresa = "J&M Artes gráficas"
-    this.lugar = "Móstoles"
+    this.lugar = "Móstoles (Madrid)"
   }
-
 }

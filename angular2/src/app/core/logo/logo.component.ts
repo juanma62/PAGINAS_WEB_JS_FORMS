@@ -6,17 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./logo.component.css']
 })
 export class LogoComponent implements OnInit {
-
-  logo: string
-  alt: string
-  title: string
+  logo: string 
+  logoText: string
 
   constructor() { }
 
   ngOnInit() {
-    this.logo = "../../assets/logo.svg"
-    this.alt = "Logotipo Angular"
-    this.title = "Este es el logotipo de Angular"
+    this.logo = '../../assets/logo.svg'
+    this.logoText = 'Logotipo de Angular'
   }
 
 }
