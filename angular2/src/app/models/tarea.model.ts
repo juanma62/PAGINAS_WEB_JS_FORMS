@@ -3,8 +3,8 @@ export interface TareaIf {
   isCompleted: boolean
 }
 
-/* export class TareaModel implements TareaIf {
-  nombre: string
+export class TareaModel implements TareaIf {
+  /* nombre: string
   constructor( nombre ) {
     this.nombre = nombre
   } */

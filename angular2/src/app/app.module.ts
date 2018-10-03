@@ -10,11 +10,13 @@ import { HomeModule } from './home/home.module';
 import { TareasModule } from './tareas/tareas.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+// the second parameter 'fr' is optional
+//registerLocaleData(localeEs, 'es');
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
