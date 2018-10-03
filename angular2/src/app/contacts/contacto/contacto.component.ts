@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ContactoIf } from '../../models/contacto.model';
-import { USERS } from '../../datos/contactos.mock';
+
 
 @Component({
   selector: 'cas-contacto',
@@ -9,13 +9,20 @@ import { USERS } from '../../datos/contactos.mock';
 })
 export class ContactoComponent implements OnInit {
 
-  contacto: ContactoIf
-  fullname: string;
-  constructor() { }
+  @Input() contacto: ContactoIf
+  @Output() eventoBorrar: EventEmitter<string>
+
+    fullname: string;
+  constructor() { 
+    this.eventoBorrar = new EventEmitter()
+  } 
 
   ngOnInit() {
-    this.contacto = USERS[0]
-    this.fullname = `${this.contacto.name.title}. ${this.contacto.name.first} ${this.contacto.name.last}`
+    this.fullname = `${this.contacto.name.title} ${this.contacto.name.first} ${this.contacto.name.last}`
   }
 
+
+  sendBorrar() {
+    this.eventoBorrar.emit(this.contacto.email)
+  }
 }

@@ -6,50 +6,50 @@ export const USERS: Array<ContactoIf> = [
     name: {
         title: "ms",
         first: "kelly",
-        last: "reyes"
+        last: "reyes lópez"
     },
     location: {
-    street: "9614 o'connell avenue",
-    city: "midleton",
-    state: "limerick",
-    postcode: 61007,
-    coordinates: {
-    latitude: "23.4423",
-    longitude: "122.8443"
-    },
-    timezone: {
-    offset: "+3:30",
-    description: "Tehran"
-    }
+        street: "9614 o'connell avenue",
+        city: "midleton",
+        state: "limerick",
+        postcode: 61007,
+        coordinates: {
+        latitude: "23.4423",
+        longitude: "122.8443"
+        },
+        timezone: {
+        offset: "+3:30",
+        description: "Tehran"
+        }
     },
     email: "kelly.reyes@example.com",
     login: {
-    uuid: "9ce9f8a8-9100-479d-b3b2-4ac60e50848f",
-    username: "bigelephant687",
-    password: "qazwsxed",
-    salt: "edbEL28n",
-    md5: "e62c1767e5d4dcb6b0d42a26a7eb2abb",
-    sha1: "7f6053244946ccd85bde2c1c1a6a1369e802dac7",
-    sha256: "41b452318af8dc198fecdc42e04852475c0cf8fc40faae05f8e3f03d71f7d790"
+        uuid: "9ce9f8a8-9100-479d-b3b2-4ac60e50848f",
+        username: "bigelephant687",
+        password: "qazwsxed",
+        salt: "edbEL28n",
+        md5: "e62c1767e5d4dcb6b0d42a26a7eb2abb",
+        sha1: "7f6053244946ccd85bde2c1c1a6a1369e802dac7",
+        sha256: "41b452318af8dc198fecdc42e04852475c0cf8fc40faae05f8e3f03d71f7d790"
     },
     dob: {
-    date: "1986-06-04T08:38:28Z",
-    age: 32
+        date: "1986-06-04T08:38:28Z",
+        age: 32
     },
     registered: {
-    date: "2008-09-26T06:43:51Z",
-    age: 10
+        date: "2008-09-26T06:43:51Z",
+        age: 10
     },
     phone: "071-305-2590",
     cell: "081-115-7209",
     id: {
-    name: "PPS",
-    value: "7077388T"
+        name: "PPS",
+        value: "7077388T"
     },
     picture: {
-    large: "https://randomuser.me/api/portraits/women/4.jpg",
-    medium: "https://randomuser.me/api/portraits/med/women/4.jpg",
-    thumbnail: "https://randomuser.me/api/portraits/thumb/women/4.jpg"
+        large: "https://randomuser.me/api/portraits/women/4.jpg",
+        medium: "https://randomuser.me/api/portraits/med/women/4.jpg",
+        thumbnail: "https://randomuser.me/api/portraits/thumb/women/4.jpg"
     },
     nat: "IE"
     },
@@ -521,4 +521,4 @@ export const USERS: Array<ContactoIf> = [
     },
     nat: "FR"
     }
-    ]
+]

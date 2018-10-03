@@ -4,7 +4,7 @@ export interface TareaIf {
 }
 
 export class TareaModel implements TareaIf {
-  /* nombre: string
+  /*nombre: string
   constructor( nombre ) {
     this.nombre = nombre
   } */

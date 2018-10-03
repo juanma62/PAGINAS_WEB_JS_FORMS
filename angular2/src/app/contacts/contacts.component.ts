@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'cas-contacts',
-  template: `<cas-contacto></cas-contacto>`,
+  template: '<cas-lista-contactos></cas-lista-contactos>',
   styles: []
 })
 export class ContactsComponent implements OnInit {

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactoIf } from '../../models/contacto.model';
+import { USERS } from '../../datos/contactos.mock';
 
 @Component({
   selector: 'cas-lista-contactos',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaContactosComponent implements OnInit {
 
+  aContactos: Array<ContactoIf>
+
   constructor() { }
 
   ngOnInit() {
+    this.aContactos = USERS
   }
 
+  borrarContacto(badEmail){
+    this.aContactos = this.aContactos.filter(
+      (item) => (item.email !=badEmail))
+  }
 }
