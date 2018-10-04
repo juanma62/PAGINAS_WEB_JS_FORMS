@@ -18,13 +18,15 @@ export class UsuariosService {
 
   getLista(){
     return new Promise(
-      (resolve, reject) => {
+      (resolve, reject) => {if(resolve){
         this.http.get(this.url).toPromise()
         .then((response: any) => {
           this.aContactos = response.results
           resolve(this.aContactos)
+        }).catch(function() {
+            console.log('Esto es un error')
         })
-      }
-    )  
+      }    
+    })
   }
 }
