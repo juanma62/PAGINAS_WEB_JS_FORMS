@@ -5,10 +5,12 @@ import { ContactsRoutingModule } from './contacts-routing.module';
 import { ContactsComponent } from './contacts.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
+    HttpClientModule,
     ContactsRoutingModule
   ],
   declarations: [
