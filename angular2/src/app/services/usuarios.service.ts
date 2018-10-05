@@ -16,17 +16,23 @@ export class UsuariosService {
     this.url = environment.api_users
    }
 
-  getLista(){
-    return new Promise(
-      (resolve, reject) => {if(resolve){
+  getLista(): Promise<Array<ContactoIf>>{
+    return new Promise<Array<ContactoIf>>(
+      (resolve, reject) => {
         this.http.get(this.url).toPromise()
         .then((response: any) => {
-          this.aContactos = response.results
-          resolve(this.aContactos)
-        }).catch(function() {
-            console.log('Esto es un error')
-        })
-      }    
+          console.dir(response as Array<ContactoIf>)
+          resolve(response.results )
+        }, (error) => {console.log(error)})
     })
+  }
+  
+  async getListaAA(): Promise<Array<ContactoIf>>{
+    let response
+    try{
+      response = await this.http.get(this.url).toPromise()
+    }catch(e){
+      console.log("Esto es un error")
+    } return response.results
   }
 }

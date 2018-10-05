@@ -13,6 +13,7 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+import { ArticuloComponent } from './articulo/articulo.component';
 
 // the second parameter 'fr' is optional
 registerLocaleData(localeEs, 'es');
@@ -20,7 +21,8 @@ registerLocaleData(localeEs, 'es');
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent
+    AboutComponent,
+    ArticuloComponent
   ],
   imports: [
     BrowserModule,
