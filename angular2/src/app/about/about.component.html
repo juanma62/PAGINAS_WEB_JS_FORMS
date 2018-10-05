@@ -1,6 +1,12 @@
 <!-- <p>
   <mat-checkbox>Me gusta material</mat-checkbox>
 </p> -->
+<p>
+  about {{!empresa ? 'mi empresa' : empresa}}
+</p>
+<p>
+  Empresa cliente: {{cliente?.nombre}}
+</p>
 <cas-articulo 
   [titulo]="'El señor de los anillos'"
   [autor]="'Pepe Pérez'">

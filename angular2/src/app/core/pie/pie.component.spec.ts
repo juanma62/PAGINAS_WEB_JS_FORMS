@@ -28,6 +28,6 @@ describe('PieComponent', () => {
   })
 
   it('should  be CAS "empresa" ', () => {
-    expect(component.empresa).toEqual('CAS')
+    expect(component.empresa).toEqual('J&M Artes gráficas')
   })
 });

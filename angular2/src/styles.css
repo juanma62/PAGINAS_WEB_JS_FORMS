@@ -2,3 +2,7 @@
 body{
     background-color: aliceblue;
 }
+
+.card {
+    margin-top: 1rem;
+}
